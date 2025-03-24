@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New User</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    "
+  >
+    <h2 style="color: #007bff">Add New User</h2>
+
+    <form
+      method="POST"
+      action="{% url 'add_user' %}"
+      style="
+        background-color: white;
+        padding: 20px;
+        max-width: 400px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px gray;
+      "
+    >
+      {% csrf_token %}
+
+      <label for="username" style="font-weight: bold">Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        "
+      /><br />
+
+      <label for="email" style="font-weight: bold">Email:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        "
+      /><br />
+
+      <label for="password" style="font-weight: bold">Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        "
+      /><br />
+
+      <button
+        type="submit"
+        style="
+          background-color: #28a745;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+        "
+      >
+        Create User
+      </button>
+    </form>
+  </body>
+</html>

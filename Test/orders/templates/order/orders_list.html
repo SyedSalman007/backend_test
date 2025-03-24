@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order List</title>
+    <style>
+      table {
+        width: 60%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Your Orders</h2>
+    {% if orders %}
+    <table border="1">
+      <tr>
+        <th>Email</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.email }}</td>
+        <td>{{ order.product_name }}</td>
+        <td>{{ order.product_price }}</td>
+        <td>{{ order.quantity }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No orders found.</p>
+    {% endif %}
+  </body>
+</html>
